@@ -1,1 +1,29 @@
-<h1><%=@user%></h1>
+<main class="container">
+
+  <div class="row border border-1">
+  <div class="col ">
+
+
+  <%= image_tag (@user.photo) unless @user.photo.nil? %>
+  </div>
+  <div class="col d-flex d-flex justify-content-evenly d-flex align-items-center">
+    <p class="fs-3">
+       <%= @user.name%>
+       </p>
+
+          <div class="fs-5">Number of posts: <%= @user.posts_counter%></div>
+
+  </div>
+  </div>
+  <div class="row border border-1">
+<%= @user.bio %>
+    </div>
+    <%@user.posts.each do |post|%>
+    <div class="row border border-1" >
+
+    <%= post.title%>
+    </div>
+      <%= link_to "See all posts",   "/users/#{post.user.id}/posts",class:"btn"%>
+    <%end%>
+
+  </main>

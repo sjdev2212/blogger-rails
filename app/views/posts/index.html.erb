@@ -1,1 +1,42 @@
-<h1><%=@posts%></h1>
+
+<main class="container">
+<div class="row border border-1">
+
+<div class="col ">
+
+
+<%= image_tag (@user.photo) unless @user.photo.nil? %>
+</div>
+<div class="col d-flex d-flex justify-content-evenly d-flex align-items-center">
+  <p class="fs-3">
+     <%= @user.name%>
+     </p>
+
+</div>
+</div>
+
+<%@posts.each do |post|%>
+<div class="row border border-1">
+  <div class="col">
+  <p>Post #
+<%= post.id%>
+</p>
+</div>
+<div class="col">Title:
+<%= link_to (post.title),"/users/#{@user.id}/posts/#{post.id}"%>
+</div>
+
+    <div>Comments: <%= post.comments.size %>, Likes: <%= post.likes.size %></div>
+
+
+</div>
+
+<% post.recent_comments.each do |comment| %>
+         <div class=" row border border-1 mt-2">
+           <p><%= "#{comment.user.name}: #{comment.text}" %></p>
+
+         </div>
+         <% end %>
+
+<%end%>
+<main>

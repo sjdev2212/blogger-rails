@@ -1,4 +1,10 @@
 <main class="container">
+  <% flash.each do |type, msg| %>
+ <div class="alert alert-danger">
+   <%= msg %>
+ </div>
+
+<% end %>
 
   <div class="row border border-1">
   <div class="col ">
@@ -23,7 +29,9 @@
 
     <%= post.title%>
     </div>
-      <%= link_to "See all posts",   "/users/#{post.user.id}/posts",class:"btn"%>
+
     <%end%>
+    <%= link_to "See all posts",   "/users/#{@post.user_id}/posts",class:"btn btn-info"%>
+    <%= link_to "Create a post",   "/users/#{@user.id}/posts/new" ,class:"btn btn-info"%>
 
   </main>

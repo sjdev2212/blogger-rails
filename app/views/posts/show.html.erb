@@ -11,6 +11,7 @@
      <p><%= "#{comment.user.name}: #{comment.text}" %></p>
 
    <% end %>
+   <%= link_to 'Add a comment',new_user_post_comment_path(@user.id ,@post),class:"btn btn-light mt-3"%>
        <div>
 
 

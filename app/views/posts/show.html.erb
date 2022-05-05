@@ -14,7 +14,7 @@
    <%= link_to 'Add a comment',new_user_post_comment_path(@user.id ,@post),class:"btn btn-light mt-3"%>
        <div>
 
-
+ <%= button_to 'Like this post',user_post_likes_path(@user.id, @post.id), method: :post,class:"btn btn-light mt-3"%>
 
  </div>
  </div>

@@ -59,3 +59,13 @@ This project is [MIT](./MIT.md) licensed.
 ## Show your support
 
 Give a ⭐️ if you like this project!
+
+
+
+if @new_post.save
+flash[:notice] = 'Post created'
+else
+
+   render :action => 'new'
+   flash[:notice] = 'Could not create post'
+end

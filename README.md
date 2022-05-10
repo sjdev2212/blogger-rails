@@ -1,5 +1,5 @@
 
-
+![](https://img.shields.io/badge/Microverse-blueviolet)
 # ROR: Blogger
 
 > ROR app is a Blog where the user can create posts, comments and likes.

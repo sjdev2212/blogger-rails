@@ -2,7 +2,7 @@
 
 # ROR: Blogger
 
-> ROR app to create posts.
+> ROR app is a Blog where the user can create posts, comments and likes.
 
 
 ## Built With
@@ -22,6 +22,7 @@ You need to have followings installed in your local machine:
 - `Rails`
 - `RSpec`
 - `node.js`
+- `Devise`
 
 ### Setup
 
@@ -41,13 +42,23 @@ To setup the Items Library project in your local, in the repo page:
 - `cd rails-blog`
 - 'rspec spec'
 
-## Author
+## Author1
 
 
 👤 **Anibal Amoroso**
 
 - GitHub: [sj1978](https://github.com/sj1978)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/anibalamoroso/)
+
+
+### Author2
+
+
+👤 **Amel Khiri**
+
+- GitHub: [@Algerina](https://github.com/Algerina)
+- LinkedIn: [Amel Khiri](https://linkedin.com/in/amel-khiri-qahwadji-37a550135)
+- Twitter: [@Amel khiri](https://twitter.com/AmalQahwadji)
 
 ## 🤝 Contributing
 

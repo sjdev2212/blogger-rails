@@ -17,21 +17,18 @@
        <%= @user.name%>
        </p>
 
-          <div class="fs-5">Number of posts: <%= @user.posts_counter%></div>
+          <div class="fs-5">Number of posts: <%= @user.posts_counter || 0 %></div>
 
   </div>
   </div>
   <div class="row border border-1">
 <%= @user.bio %>
     </div>
-    <%@user.posts.each do |post|%>
-    <div class="row border border-1" >
 
-    <%= post.title%>
-    </div>
 
-    <%end%>
-    <%= link_to "See all posts",   "/users/#{@post.user_id}/posts",class:"btn btn-light mt-3"%>
-    <%= link_to "Create a post",   "/users/#{@user.id}/posts/new" ,class:"btn btn-light mt-3"%>
+
+
+    <%= link_to "Create a post",   "/users/#{@user.id}/posts/new" ,class:"btn btn-warning mt-3 "%>
+    <%= link_to "See all posts",   user_posts_path(@user.id) ,class:"btn btn-warning mt-3 ms-4"%>
 
   </main>

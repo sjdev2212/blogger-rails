@@ -1,0 +1,37 @@
+<nav class="navbar navbar-light bg-success d-flex justify-content-around">
+  <div class="nav-link link-dark "">
+    Blogger
+    </div>
+
+
+        <div class="nav-item ">
+    <%= link_to "All Authors" ,users_path,class: "nav-link link-dark"%>
+        </div>
+
+
+        <%if user_signed_in?%>
+        <div class="nav-link link-dark "">
+          Signed in as : <%= current_user.name%>
+          </div>
+        <div class="nav-item">
+  <%= button_to "Sign out",  destroy_user_session_path, method: :delete ,class: "btn btn-ligth"%>
+        </div>
+
+        <%else%>
+        <div class="nav-item">
+        <%= link_to "Sign in" ,new_user_session_path,class: "nav-link link-dark"%>
+        </div>
+          <div class="nav-item">
+          <%= link_to "Sign up" ,new_user_registration_path,class: "nav-link link-dark " %>
+          </div>
+
+        <%end%>
+
+
+
+
+      </ul>
+
+    </div>
+  </div>
+</nav>

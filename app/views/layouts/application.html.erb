@@ -14,8 +14,12 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <div class="container bg-success p-2 text-dark bg-opacity-50">
+  <body class="bg-success p-2 text-dark bg-opacity-50">
+    <div class="container ">
+    <%= render "/layouts/header" %>
+
+      <p class="notice"><%= notice %></p>
+           <p class="alert"><%= alert %></p>
 
 
     <%= yield %>

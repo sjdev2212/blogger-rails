@@ -24,6 +24,9 @@
 </div>
 <div class="col">Title:
 <%= link_to (post.title),"/users/#{@user.id}/posts/#{post.id}"%>
+<% if can? :destroy, post %>
+<%= button_to "Delete post", "/users/#{@user.id}/posts/#{post.id}",method: :delete ,class:"btn btn-warning"%>
+<%end%>
 </div>
 
     <div>Comments: <%= post.comments.size %>, Likes: <%= post.likes.size %></div>

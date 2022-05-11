@@ -8,8 +8,8 @@ class User < ApplicationRecord
   has_many :comments
 
   def admin?
-    role == 'admin' ? true : false
-end
+    role == 'admin'
+  end
 
   # validates :name, presence: true
   # validates :posts_counter, numericality: { greater_than_or_equal_to: 0 }

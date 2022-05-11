@@ -7,6 +7,10 @@ class User < ApplicationRecord
   has_many :likes
   has_many :comments
 
+  def admin?
+    role == 'admin' ? true : false
+end
+
   # validates :name, presence: true
   # validates :posts_counter, numericality: { greater_than_or_equal_to: 0 }
   def recent_posts

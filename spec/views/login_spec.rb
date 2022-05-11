@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Login page', type: :feature do
   before do
     User.create(id: 1, name: 'name', email: 'name@name.com',
-              password: 'password', posts_counter: 0)
+                password: 'password', posts_counter: 0)
   end
 
   describe 'Visiting the login page' do

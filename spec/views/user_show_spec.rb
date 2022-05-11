@@ -9,11 +9,11 @@ RSpec.describe 'User show page', type: :feature do
     Post.create(id: 1, user_id: 1, title: 'Hello 1', text: 'This is my first post', comments_counter: 0,
                 likes_counter: 0)
 
-     Post.create(id: 2, user_id: 1, title: 'Hello 2', text: 'This is my second post', comments_counter: 0,
-                 likes_counter: 0)
+    Post.create(id: 2, user_id: 1, title: 'Hello 2', text: 'This is my second post', comments_counter: 0,
+                likes_counter: 0)
 
-     Post.create(id: 3, user_id: 1, title: 'Hello 3', text: 'This is my third post', comments_counter: 0,
-               likes_counter: 0)
+    Post.create(id: 3, user_id: 1, title: 'Hello 3', text: 'This is my third post', comments_counter: 0,
+                likes_counter: 0)
   end
 
   describe 'Visiting the users show page' do
@@ -37,11 +37,11 @@ RSpec.describe 'User show page', type: :feature do
       expect(page).to have_text("Hello there! I'm Qwerty")
     end
 
-     it "should display the user's recent posts" do
-       expect(page).to have_text('Hello 1')
-       expect(page).to have_text('Hello 2')
-       expect(page).to have_text('Hello 3')
-     end
+    it "should display the user's recent posts" do
+      expect(page).to have_text('Hello 1')
+      expect(page).to have_text('Hello 2')
+      expect(page).to have_text('Hello 3')
+    end
 
     it 'should have a See all posts button' do
       expect(page).to have_link('See all posts')

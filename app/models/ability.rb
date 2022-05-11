@@ -6,7 +6,7 @@ class Ability
     #
     user ||= User.new # guest user (not logged in)
 
-    if user.is? :admin
+    if user.present?
       can :manage, :all
     elsif can :manage, Post, author_id: user.id
       can :manage, Comment, author_id: user.id

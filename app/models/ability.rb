@@ -6,13 +6,12 @@ class Ability
     #
     user ||= User.new # guest user (not logged in)
 
-    if user.is? :admin
-      can :manage, :all
-    elsif can :manage, Post, author_id: user.id
-      can :manage, Comment, author_id: user.id
-      can :read, :all
+    if user.admin? 
+    can :manage, :all
     else
-      can :read, :all
+    can :manage, Post, author: user  # owner of post can perform all view, update or destroy own post if Post.author == user
+    can :manage, Comment, author: user
+    can :read, :all
     end
     #
     # The first argument to `can` is the action you are giving the user

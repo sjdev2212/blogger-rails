@@ -22,6 +22,9 @@
   <div class="row border border-1">
 <%= @user.bio %>
     </div>
+    <% @posts.each do  |post|%>
+    <%= link_to (post.title),"/users/#{@user.id}/posts/#{post.id}" %>
+    <%end %>
 
 
 

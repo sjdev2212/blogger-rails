@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :update_allowed_parameters, if: :devise_controller?
+  protect_from_forgery unless: -> { request.format.json? }
 
   protected
 

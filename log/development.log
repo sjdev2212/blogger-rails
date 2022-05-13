@@ -24106,3 +24106,657 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 32ms (Views: 28.1ms | ActiveRecord: 2.0ms | Allocations: 12430)
 
 
+Started GET "/users/2/posts" for ::1 at 2022-05-12 13:36:10 -0300
+  
+NameError (undefined local variable or method `request' for ApplicationController:Class
+Did you mean?  require):
+  
+app/controllers/application_controller.rb:3:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/posts_controller.rb:1:in `<main>'
+Started GET "/api/users/:user_id/posts" for ::1 at 2022-05-12 13:37:18 -0300
+  
+NameError (undefined local variable or method `request' for ApplicationController:Class
+Did you mean?  require):
+  
+app/controllers/application_controller.rb:3:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/api_controller.rb:1:in `<main>'
+Started GET "/api/users/:user_id/posts" for ::1 at 2022-05-12 13:41:47 -0300
+Processing by ApiController#index_posts as HTML
+  Parameters: {"user_id"=>":user_id"}
+  [1m[36mPost Load (49.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/api_controller.rb:5:in `index_posts'
+Completed 200 OK in 248ms (Views: 41.9ms | ActiveRecord: 64.1ms | Allocations: 16158)
+
+
+Started GET "/api/users/:user_id/posts/:post_id/comments" for ::1 at 2022-05-12 13:43:03 -0300
+Processing by ApiController#post_comments as HTML
+  Parameters: {"user_id"=>":user_id", "post_id"=>":post_id"}
+  [1m[36mComment Load (23.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", nil]]
+  ↳ app/controllers/api_controller.rb:9:in `post_comments'
+Completed 200 OK in 81ms (Views: 21.8ms | ActiveRecord: 24.4ms | Allocations: 7446)
+
+
+Started GET "/" for ::1 at 2022-05-12 13:43:15 -0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (30.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (Duration: 47.7ms | Allocations: 8470)
+  Rendered layouts/_header.html.erb (Duration: 12.1ms | Allocations: 508)
+  Rendered layout layouts/application.html.erb (Duration: 213.7ms | Allocations: 46046)
+Completed 500 Internal Server Error in 232ms (ActiveRecord: 38.4ms | Allocations: 48428)
+
+
+  
+ActionView::Template::Error (undefined method `flash' for #<ActionDispatch::Request GET "http://[::1]:3000/" for ::1>):
+    18:     <div class="container ">
+    19:     <%= render "/layouts/header" %>
+    20: 
+    21:       <p class="notice"><%= notice %></p>
+    22:            <p class="alert"><%= alert %></p>
+    23: 
+    24: 
+  
+app/views/layouts/application.html.erb:21
+Started GET "/" for ::1 at 2022-05-12 13:43:56 -0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 853)
+  Rendered layouts/_header.html.erb (Duration: 0.7ms | Allocations: 449)
+  Rendered layout layouts/application.html.erb (Duration: 17.6ms | Allocations: 6003)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.9ms | Allocations: 7128)
+
+
+  
+ActionView::Template::Error (undefined method `flash' for #<ActionDispatch::Request GET "http://[::1]:3000/" for ::1>):
+    18:     <div class="container ">
+    19:     <%= render "/layouts/header" %>
+    20: 
+    21:       <!-- <p class="notice"><%= notice %></p>
+    22:            <p class="alert"><%= alert %></p> -->
+    23: 
+    24: 
+  
+app/views/layouts/application.html.erb:21
+Started GET "/" for ::1 at 2022-05-12 13:44:06 -0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 846)
+  Rendered layouts/_header.html.erb (Duration: 3.4ms | Allocations: 449)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 3881)
+Completed 200 OK in 21ms (Views: 16.1ms | ActiveRecord: 0.5ms | Allocations: 5039)
+
+
+Started GET "/users/1" for ::1 at 2022-05-12 13:44:09 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 5.0ms | Allocations: 2470)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 2550)
+Completed 500 Internal Server Error in 172ms (ActiveRecord: 1.8ms | Allocations: 14790)
+
+
+  
+ActionView::Template::Error (undefined method `flash' for #<ActionDispatch::Request GET "http://[::1]:3000/users/1" for ::1>):
+    1: <main class="container">
+    2:   <% flash.each do |type, msg| %>
+    3:  <div class="alert alert-danger">
+    4:    <%= msg %>
+    5:  </div>
+  
+app/views/users/show.html.erb:2
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (2.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (30.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (5046.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "blogger_development"[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (237.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "blogger_development"[0m
+  [1m[35m (188.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "blogger_test"[0m
+  [1m[35m (858.8ms)[0m  [1m[35mCREATE DATABASE "blogger_development" ENCODING = 'unicode'[0m
+  [1m[35m (506.5ms)[0m  [1m[35mCREATE DATABASE "blogger_test" ENCODING = 'unicode'[0m
+  [1m[35m (72.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (79.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (12.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5565347226186074040)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20220428130430)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (58.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "photo" character varying, "bio" text, "posts_counter" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220428130430"]]
+  [1m[36mTRANSACTION (13.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePosts (20220428130930)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (86.2ms)[0m  [1m[35mCREATE TABLE "posts" ("id" bigserial primary key, "title" character varying, "text" text, "comments_counter" integer, "likes_counter" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220428130930"]]
+  [1m[36mTRANSACTION (16.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateComments (20220428130945)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (53.4ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "text" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220428130945"]]
+  [1m[36mTRANSACTION (13.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateLikes (20220428130956)
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (38.5ms)[0m  [1m[35mCREATE TABLE "likes" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (4.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220428130956"]]
+  [1m[36mTRANSACTION (14.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUserRefToPosts (20220428133859)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.9ms)[0m  [1m[35mALTER TABLE "posts" ADD "user_id" bigint NOT NULL[0m
+  [1m[35m (34.1ms)[0m  [1m[35mCREATE INDEX "index_posts_on_user_id" ON "posts" ("user_id")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "posts" ADD CONSTRAINT "fk_rails_5b5ddfd518"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220428133859"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUserRefToLikes (20220428134540)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "likes" ADD "user_id" bigint NOT NULL[0m
+  [1m[35m (29.8ms)[0m  [1m[35mCREATE INDEX "index_likes_on_user_id" ON "likes" ("user_id")[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "likes" ADD CONSTRAINT "fk_rails_1e09b5dabf"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[36mActiveRecord::SchemaMigration Create (4.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220428134540"]]
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUserRefToComments (20220428134620)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "comments" ADD "user_id" bigint NOT NULL[0m
+  [1m[35m (29.3ms)[0m  [1m[35mCREATE INDEX "index_comments_on_user_id" ON "comments" ("user_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "comments" ADD CONSTRAINT "fk_rails_03de2dc08c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220428134620"]]
+  [1m[36mTRANSACTION (13.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPostRefToComments (20220428134846)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "comments" ADD "post_id" bigint NOT NULL[0m
+  [1m[35m (27.4ms)[0m  [1m[35mCREATE INDEX "index_comments_on_post_id" ON "comments" ("post_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "comments" ADD CONSTRAINT "fk_rails_2fd19c0db7"
+FOREIGN KEY ("post_id")
+  REFERENCES "posts" ("id")
+[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220428134846"]]
+  [1m[36mTRANSACTION (12.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPostRefToLikes (20220428134921)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "likes" ADD "post_id" bigint NOT NULL[0m
+  [1m[35m (26.7ms)[0m  [1m[35mCREATE INDEX "index_likes_on_post_id" ON "likes" ("post_id")[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "likes" ADD CONSTRAINT "fk_rails_87a8aac469"
+FOREIGN KEY ("post_id")
+  REFERENCES "posts" ("id")
+[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220428134921"]]
+  [1m[36mTRANSACTION (9.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddDeviseToUsers (20220509151825)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.0ms)[0m  [1m[35mALTER TABLE "users" ADD "email" character varying DEFAULT '' NOT NULL[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_password" character varying DEFAULT '' NOT NULL[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_token" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_sent_at" timestamp(6)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_created_at" timestamp(6)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "confirmation_token" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "confirmed_at" timestamp(6)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "confirmation_sent_at" timestamp(6)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "unconfirmed_email" character varying[0m
+  [1m[35m (31.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (24.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220509151825"]]
+  [1m[36mTRANSACTION (13.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddRoleToUser (20220510221325)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "role" character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220510221325"]]
+  [1m[36mTRANSACTION (13.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-05-12 16:48:59.418160"], ["updated_at", "2022-05-12 16:48:59.418160"]]
+  [1m[36mTRANSACTION (9.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(5565347226186074040)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mComment Create (1.0ms)[0m  [1m[32mINSERT INTO "comments" ("text", "created_at", "updated_at", "user_id", "post_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", "well written!!!"], ["created_at", "2022-05-12 16:49:06.290482"], ["updated_at", "2022-05-12 16:49:06.290482"], ["user_id", nil], ["post_id", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/api/users/:user_id/posts/:post_id/comments" for ::1 at 2022-05-12 13:53:19 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApiController#post_comments as HTML
+  Parameters: {"user_id"=>":user_id", "post_id"=>":post_id"}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", nil]]
+  ↳ app/controllers/api_controller.rb:9:in `post_comments'
+Completed 200 OK in 20ms (Views: 3.4ms | ActiveRecord: 2.1ms | Allocations: 11368)
+
+
+Started GET "/api/users/" for ::1 at 2022-05-12 13:53:34 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/api/users"):
+  
+Started GET "/api/users/:user_id/posts" for ::1 at 2022-05-12 13:54:08 -0300
+Processing by ApiController#index_posts as HTML
+  Parameters: {"user_id"=>":user_id"}
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/api_controller.rb:5:in `index_posts'
+Completed 200 OK in 26ms (Views: 3.7ms | ActiveRecord: 0.7ms | Allocations: 6167)
+
+
+Started GET "/" for ::1 at 2022-05-12 13:55:16 -0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 814)
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 514)
+  Rendered layout layouts/application.html.erb (Duration: 63.8ms | Allocations: 36674)
+Completed 200 OK in 75ms (Views: 66.1ms | ActiveRecord: 2.2ms | Allocations: 39091)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-05-12 13:55:28 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.4ms | Allocations: 239)
+  Rendered devise/shared/_links.html.erb (Duration: 12.0ms | Allocations: 825)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 113.3ms | Allocations: 6394)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 145)
+  Rendered layout layouts/application.html.erb (Duration: 126.0ms | Allocations: 8807)
+Completed 200 OK in 197ms (Views: 129.7ms | ActiveRecord: 3.7ms | Allocations: 18983)
+
+
+Started POST "/users" for ::1 at 2022-05-12 13:56:06 -0300
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"user"=>{"name"=>"anibal", "bio"=>"asdasdasd", "email"=>"anibal@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "anibal@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "posts_counter", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "role") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) RETURNING "id"[0m  [["name", "anibal"], ["photo", nil], ["bio", "asdasdasd"], ["posts_counter", nil], ["created_at", "2022-05-12 16:56:07.225829"], ["updated_at", "2022-05-12 16:56:07.225829"], ["email", "anibal@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", nil], ["confirmation_sent_at", "2022-05-12 16:56:07.225957"], ["unconfirmed_email", nil], ["role", nil]]
+  [1m[36mTRANSACTION (14.1ms)[0m  [1m[35mCOMMIT[0m
+  Rendering devise/mailer/confirmation_instructions.html.erb
+  Rendered devise/mailer/confirmation_instructions.html.erb (Duration: 16.1ms | Allocations: 399)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 39.1ms
+Delivered mail 627d3c277edfc_90913ee466753@sj1978-H310M-H.mail (39.7ms)
+Date: Thu, 12 May 2022 13:56:07 -0300
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: anibal@gmail.com
+Message-ID: <627d3c277edfc_90913ee466753@sj1978-H310M-H.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome anibal@gmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=sWvr5t4o96kEFB8x_6W9">Confirm my account</a></p>
+
+Completed 500 Internal Server Error in 704ms (ActiveRecord: 15.6ms | Allocations: 39482)
+
+
+  
+ActionDispatch::Request::Session::DisabledSessionError (Your application has sessions disabled. To write to the session you must first configure a session store):
+  
+actionpack (7.0.2.3) lib/action_dispatch/request/session.rb:253:in `load_for_write!'
+actionpack (7.0.2.3) lib/action_dispatch/request/session.rb:151:in `[]='
+warden (1.2.9) lib/warden/session_serializer.rb:27:in `store'
+warden (1.2.9) lib/warden/proxy.rb:187:in `set_user'
+devise (4.8.1) lib/devise/controllers/sign_in_out.rb:53:in `sign_in'
+devise (4.8.1) app/controllers/devise/registrations_controller.rb:106:in `sign_up'
+devise (4.8.1) app/controllers/devise/registrations_controller.rb:24:in `create'
+actionpack (7.0.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (7.0.2.3) lib/abstract_controller/base.rb:214:in `process_action'
+actionpack (7.0.2.3) lib/action_controller/metal/rendering.rb:53:in `process_action'
+actionpack (7.0.2.3) lib/abstract_controller/callbacks.rb:234:in `block in process_action'
+activesupport (7.0.2.3) lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+actiontext (7.0.2.3) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.2.3) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.2.3) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.2.3) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.2.3) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.2.3) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.2.3) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.2.3) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.2.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.2.3) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.2.3) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.2.3) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.2.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.2.3) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.2.3) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.2.3) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.2.3) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.2.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.2.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.2.3) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (7.0.2.3) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (7.0.2.3) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.2.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.2.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.2.3) lib/action_dispatch/routing/route_set.rb:850:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (7.0.2.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.2.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.2.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (7.0.2.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.2.3) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.2.3) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.2.3) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.2.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.2.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.2.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ana@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "posts_counter", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "role") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) RETURNING "id"[0m  [["name", "Anna"], ["photo", "https://randomuser.me/api/portraits/women/52.jpg"], ["bio", "labore et dolore magna aliqua. Ut enim ad minim ea c"], ["posts_counter", nil], ["created_at", "2022-05-12 17:02:54.217627"], ["updated_at", "2022-05-12 17:02:54.217627"], ["email", "ana@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", nil], ["confirmation_sent_at", "2022-05-12 17:02:54.217729"], ["unconfirmed_email", nil], ["role", nil]]
+  [1m[36mTRANSACTION (9.9ms)[0m  [1m[35mCOMMIT[0m
+  Rendering devise/mailer/confirmation_instructions.html.erb
+  Rendered devise/mailer/confirmation_instructions.html.erb (Duration: 1.7ms | Allocations: 1299)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 66.1ms
+Delivered mail 627d3dbe5c268_91dee74234b6@sj1978-H310M-H.mail (3.1ms)
+Date: Thu, 12 May 2022 14:02:54 -0300
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: ana@gmail.com
+Message-ID: <627d3dbe5c268_91dee74234b6@sj1978-H310M-H.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome ana@gmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=njwy1EgHZQYEZBzrFtds">Confirm my account</a></p>
+
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Create (8.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "text", "comments_counter", "likes_counter", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Lorem ipsum dolor sit amet, consectetur adipiscing elit,"], ["text", "Lorem ip."], ["comments_counter", nil], ["likes_counter", nil], ["created_at", "2022-05-12 17:04:57.104925"], ["updated_at", "2022-05-12 17:04:57.104925"], ["user_id", 2]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "posts_counter" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["posts_counter", 1], ["updated_at", "2022-05-12 17:04:57.117787"], ["id", 2]]
+  [1m[36mTRANSACTION (16.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mComment Create (0.7ms)[0m  [1m[32mINSERT INTO "comments" ("text", "created_at", "updated_at", "user_id", "post_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["text", "well written!!!"], ["created_at", "2022-05-12 17:06:05.023867"], ["updated_at", "2022-05-12 17:06:05.023867"], ["user_id", 2], ["post_id", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mPost Update (0.3ms)[0m  [1m[33mUPDATE "posts" SET "comments_counter" = $1, "updated_at" = $2 WHERE "posts"."id" = $3[0m  [["comments_counter", 1], ["updated_at", "2022-05-12 17:06:05.028567"], ["id", 1]]
+  [1m[36mTRANSACTION (21.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/users/:user_id/posts" for ::1 at 2022-05-12 14:07:21 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApiController#index_posts as HTML
+  Parameters: {"user_id"=>":user_id"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/api_controller.rb:5:in `index_posts'
+Completed 200 OK in 22ms (Views: 7.3ms | ActiveRecord: 3.9ms | Allocations: 16296)
+
+
+Started GET "/api/users/:user_id/posts/:post_id/comments" for ::1 at 2022-05-12 14:07:56 -0300
+Processing by ApiController#post_comments as HTML
+  Parameters: {"user_id"=>":user_id", "post_id"=>":post_id"}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", nil]]
+  ↳ app/controllers/api_controller.rb:9:in `post_comments'
+Completed 200 OK in 16ms (Views: 2.4ms | ActiveRecord: 1.3ms | Allocations: 6768)
+
+
+Started GET "/api/users/:user_id/posts/:post_id/comments" for ::1 at 2022-05-12 14:09:15 -0300
+Processing by ApiController#post_comments as HTML
+  Parameters: {"user_id"=>":user_id", "post_id"=>":post_id"}
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", nil]]
+  ↳ app/controllers/api_controller.rb:9:in `post_comments'
+Completed 200 OK in 10ms (Views: 1.1ms | ActiveRecord: 0.9ms | Allocations: 6321)
+
+
+Started GET "/api/users/:user_id/posts/:post_id/comments" for ::1 at 2022-05-12 14:09:39 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApiController#post_comments as HTML
+  Parameters: {"user_id"=>":user_id", "post_id"=>":post_id"}
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", nil]]
+  ↳ app/controllers/api_controller.rb:9:in `post_comments'
+Completed 200 OK in 19ms (Views: 4.3ms | ActiveRecord: 1.5ms | Allocations: 11368)
+
+
+Started GET "/api/users/:user_id/posts/:post_id/comment" for ::1 at 2022-05-12 14:10:10 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/api/users/:user_id/posts/:post_id/comment"):
+  
+Started GET "/api/users/:user_id/posts/" for ::1 at 2022-05-12 14:11:47 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+NoMethodError (undefined method `protect_from_forgery' for ApiController:Class):
+  
+app/controllers/api_controller.rb:2:in `<class:ApiController>'
+app/controllers/api_controller.rb:1:in `<main>'
+Started GET "/api/users/:user_id/posts" for ::1 at 2022-05-12 14:11:53 -0300
+  
+NoMethodError (undefined method `protect_from_forgery' for ApiController:Class):
+  
+app/controllers/api_controller.rb:2:in `<class:ApiController>'
+app/controllers/api_controller.rb:1:in `<main>'
+Started GET "/api/users/:user_id/posts" for ::1 at 2022-05-12 14:12:13 -0300
+Processing by ApiController#index_posts as HTML
+  Parameters: {"user_id"=>":user_id"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/api_controller.rb:5:in `index_posts'
+Completed 200 OK in 19ms (Views: 9.1ms | ActiveRecord: 3.5ms | Allocations: 12862)
+
+
+Started GET "/api/users/:user_id/posts" for ::1 at 2022-05-12 14:15:21 -0300
+Processing by ApiController#index_posts as HTML
+  Parameters: {"user_id"=>":user_id"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/api_controller.rb:5:in `index_posts'
+Completed 200 OK in 13ms (Views: 4.9ms | ActiveRecord: 3.3ms | Allocations: 8339)
+
+
+Started GET "/api/users/:user_id/posts" for ::1 at 2022-05-12 14:15:52 -0300
+Processing by ApiController#index_posts as HTML
+  Parameters: {"user_id"=>":user_id"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/api_controller.rb:5:in `index_posts'
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.5ms | Allocations: 764)
+
+
+Started GET "/api/users/:user_id/posts/:post_id/comments" for ::1 at 2022-05-12 14:16:00 -0300
+Processing by ApiController#post_comments as HTML
+  Parameters: {"user_id"=>":user_id", "post_id"=>":post_id"}
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1 AND "comments"."post_id" = $2[0m  [["user_id", nil], ["post_id", nil]]
+  ↳ app/controllers/api_controller.rb:9:in `post_comments'
+Completed 200 OK in 21ms (Views: 2.0ms | ActiveRecord: 1.3ms | Allocations: 6618)
+
+
+Started GET "/api/users/:user_id/posts/" for ::1 at 2022-05-12 14:17:26 -0300
+Processing by ApiController#index_posts as HTML
+  Parameters: {"user_id"=>":user_id"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/api_controller.rb:5:in `index_posts'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.3ms | Allocations: 752)
+
+
+Started GET "/api/users/:user_id/posts/1" for ::1 at 2022-05-12 14:51:46 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/api/users/:user_id/posts/1"):
+  
+Started GET "/api/users/:user_id/posts/" for ::1 at 2022-05-12 14:51:50 -0300
+Processing by ApiController#index_posts as HTML
+  Parameters: {"user_id"=>":user_id"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/api_controller.rb:5:in `index_posts'
+Completed 200 OK in 22ms (Views: 10.4ms | ActiveRecord: 3.0ms | Allocations: 12893)
+
+
+Started GET "/api/users/:user_id/posts/post_id/comments" for ::1 at 2022-05-12 14:52:40 -0300
+Processing by ApiController#post_comments as HTML
+  Parameters: {"user_id"=>":user_id", "post_id"=>"post_id"}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1 AND "comments"."post_id" = $2[0m  [["user_id", nil], ["post_id", nil]]
+  ↳ app/controllers/api_controller.rb:9:in `post_comments'
+Completed 200 OK in 16ms (Views: 3.0ms | ActiveRecord: 1.2ms | Allocations: 6634)
+
+
+Started GET "/api/users/:user_id/posts/1/comments" for ::1 at 2022-05-12 14:52:50 -0300
+Processing by ApiController#post_comments as HTML
+  Parameters: {"user_id"=>":user_id", "post_id"=>"1"}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = $1 AND "comments"."post_id" = $2[0m  [["user_id", nil], ["post_id", 1]]
+  ↳ app/controllers/api_controller.rb:9:in `post_comments'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.3ms | Allocations: 725)
+
+
+Started GET "/api/users/:user_id/posts/1/comments" for ::1 at 2022-05-12 14:53:38 -0300
+Processing by ApiController#post_comments as HTML
+  Parameters: {"user_id"=>":user_id", "post_id"=>"1"}
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/controllers/api_controller.rb:9:in `post_comments'
+Completed 200 OK in 23ms (Views: 9.5ms | ActiveRecord: 4.8ms | Allocations: 8418)
+
+
+Started GET "/api/users/:user_id/posts/1/comment" for ::1 at 2022-05-12 14:55:06 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/api/users/:user_id/posts/1/comment"):
+  
+Started GET "/api/users/:user_id/posts/1comments" for ::1 at 2022-05-12 14:55:46 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/api/users/:user_id/posts/1comments"):
+  
+Started GET "/api/users/:user_id/posts/1/comments" for ::1 at 2022-05-12 14:55:54 -0300
+  
+NameError (undefined local variable or method `request' for ApplicationController:Class
+Did you mean?  require):
+  
+app/controllers/application_controller.rb:3:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/api_controller.rb:1:in `<main>'
+Started GET "/api/users/:user_id/posts/1/comments" for ::1 at 2022-05-12 14:58:01 -0300
+  
+NoMethodError (undefined method `protect_from_forgery' for ApplicationController:Class):
+  
+app/controllers/application_controller.rb:3:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/api_controller.rb:1:in `<main>'
+Started GET "/api/users/:user_id/posts/1/comments" for ::1 at 2022-05-12 14:58:18 -0300
+Processing by ApiController#post_comments as HTML
+  Parameters: {"user_id"=>":user_id", "post_id"=>"1"}
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/controllers/api_controller.rb:9:in `post_comments'
+Completed 200 OK in 21ms (Views: 3.9ms | ActiveRecord: 3.0ms | Allocations: 10028)
+
+
+Started GET "/api/users/:user_id/posts/:post_id/comment" for ::1 at 2022-05-12 14:58:59 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/api/users/:user_id/posts/:post_id/comment"):
+  
+Started GET "/api/users/:user_id/posts/1" for ::1 at 2022-05-12 15:08:35 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/api/users/:user_id/posts/1"):
+  
+Started GET "/api/users/:user_id/posts" for ::1 at 2022-05-12 15:08:59 -0300
+Processing by ApiController#index_posts as HTML
+  Parameters: {"user_id"=>":user_id"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/api_controller.rb:5:in `index_posts'
+Completed 200 OK in 24ms (Views: 9.6ms | ActiveRecord: 4.0ms | Allocations: 15758)
+
+
+Started GET "/api/users/:user_id/posts" for ::1 at 2022-05-12 15:51:12 -0300
+Processing by ApiController#index_posts as HTML
+  Parameters: {"user_id"=>":user_id"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/api_controller.rb:5:in `index_posts'
+Completed 200 OK in 73ms (Views: 71.5ms | ActiveRecord: 13.9ms | Allocations: 3144)
+
+
+Started GET "//api/users/2/posts/1/comment" for ::1 at 2022-05-12 17:19:44 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/api/users/2/posts/1/comment"):
+  
+Started GET "//api/users/:user_id/posts/1/comment" for ::1 at 2022-05-12 17:20:33 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/api/users/:user_id/posts/1/comment"):
+  
+Started GET "/api/users/:user_id/posts/:post_id/comment" for ::1 at 2022-05-12 17:21:34 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/api/users/:user_id/posts/:post_id/comment"):
+  
+Started GET "/api/users/:user_id/posts/1/comment" for ::1 at 2022-05-12 17:21:46 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/api/users/:user_id/posts/1/comment"):
+  
+Started GET "/api/users/2/posts/1/comment" for ::1 at 2022-05-12 17:21:54 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/api/users/2/posts/1/comment"):
+  
+Started GET "/api/users/2/posts/1" for ::1 at 2022-05-12 17:22:12 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/api/users/2/posts/1"):
+  
+Started GET "/api/users/:user_id/posts/1" for ::1 at 2022-05-12 17:22:48 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/api/users/:user_id/posts/1"):
+  
+Started GET "/api/users/:user_id/posts/1/" for ::1 at 2022-05-12 17:23:18 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/api/users/:user_id/posts/1"):
+  
+Started GET "/api/users/:user_id/posts" for ::1 at 2022-05-12 17:23:24 -0300
+Processing by ApiController#index_posts as HTML
+  Parameters: {"user_id"=>":user_id"}
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/api_controller.rb:5:in `index_posts'
+Completed 200 OK in 176ms (Views: 175.2ms | ActiveRecord: 95.8ms | Allocations: 3139)
+
+

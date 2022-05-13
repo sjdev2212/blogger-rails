@@ -19,8 +19,6 @@ class ApiController < ApplicationController
     else
       render json: @comment.errors, status: :bad_request, message: 'Failed!'
     end
-
-
   end
 
   private
